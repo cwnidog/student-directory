@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4A81CB1A09B3C7007BA72D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4A81CA1A09B3C7007BA72D /* Person.swift */; };
 		2FA774FC1A0563A2000C35A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA774FB1A0563A2000C35A6 /* AppDelegate.swift */; };
 		2FA774FE1A0563A2000C35A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA774FD1A0563A2000C35A6 /* ViewController.swift */; };
 		2FA775011A0563A2000C35A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA774FF1A0563A2000C35A6 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F4A81CA1A09B3C7007BA72D /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2FA774F61A0563A2000C35A6 /* ClassRoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassRoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA774FA1A0563A2000C35A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FA774FB1A0563A2000C35A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		2FA7751B1A0563AA000C35A6 /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
+				2F4A81CA1A09B3C7007BA72D /* Person.swift */,
 				2FA774FB1A0563A2000C35A6 /* AppDelegate.swift */,
 			);
 			name = "Model Layer";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4A81CB1A09B3C7007BA72D /* Person.swift in Sources */,
 				2FA774FE1A0563A2000C35A6 /* ViewController.swift in Sources */,
 				2FA774FC1A0563A2000C35A6 /* AppDelegate.swift in Sources */,
 			);
@@ -429,6 +433,7 @@
 				2FA775171A0563A2000C35A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FA775181A0563A2000C35A6 /* Build configuration list for PBXNativeTarget "ClassRosterTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +442,7 @@
 				2FA7751A1A0563A2000C35A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,36 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     
-    class Person {
-        var firstName = "John"
-        var lastName = "Doe"
-        var isStudent = false
-        
-        init(first: String, last: String, enrolled: Bool) {
-            self.firstName = first
-            self.lastName = last
-            self.isStudent = enrolled
-        } // init()
-        
-        func getFullName() -> String {
-            return self.firstName + " " + self.lastName
-        } // getFullName()
-        
-    } // Person
+    @IBOutlet weak var tableView: UITableView!
     
-    var myPerson = Person(first: "Peter", last: "Parker", enrolled: true)
+    var names = [Person]() // an array of Persons who may be students
     
-    @IBAction func showFullName() {
-        println(self.myPerson.getFullName())
-    } // showFullName()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // we're our own datasource
+        self.tableView.dataSource = self
+        
+        // create new Person instances
+        var myPerson = Person(first: "Peter", last: "Parker", enrolled: true)
+        var anotherPerson = Person(first: "Lois", last: "Lane", enrolled: true)
+        var thirdPerson = Person(first: "Bruce", last: "Wayne", enrolled: false)
+        
+        // add the new instances to the array of names
+        self.names.append(myPerson)
+        self.names.append(anotherPerson)
+        self.names.append(thirdPerson)
     }
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.names.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as UITableViewCell
+        
+        var personToDisplay = self.names[indexPath.row]
+        cell.textLabel.text = personToDisplay.getFullName()
+        return cell
+    }
 
 }
 
