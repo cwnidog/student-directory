@@ -10,15 +10,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    var selectedPerson = Person()
+    // label Outlets
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var firstNameLabel: UILabel!
+    
+    var selectedPerson = Person() // Student's names to display
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // paint it red
+        self.view.backgroundColor = UIColor.redColor()
+        
+        // display Person's full name as scene title
         self.title = self.selectedPerson.getFullName()
+        
+        // fill in the names
+        self.firstNameLabel.text = selectedPerson.firstName
+        self.lastNameLabel.text = selectedPerson.lastName
+        
 
         // Do any additional setup after loading the view.
-    }
+    } // ()viewDidLoad
 
 
     /*
@@ -31,4 +44,4 @@ class DetailViewController: UIViewController {
     }
     */
 
-}
+} // class DetailViewController

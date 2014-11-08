@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Home" // title for scene
+        
         // we're our own datasource and delegate
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -44,15 +46,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     } // tableView()
     
-    override func override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SHOW_DETAIL" {
             let detailViewController = segue.destinationViewController as DetailViewController
             let selectedIndexPath = self.tableView.indexPathForSelectedRow()
-            var personToPass = self.names
             
-            detailViewController.selectedPersons = personToPass
-        }
-    }
+            var personToPass = self.names[selectedIndexPath!.row]
+            
+            detailViewController.selectedPerson = personToPass
+            
+        } // if seque.identifier
+    } // prepareForSeque()
     
     
 

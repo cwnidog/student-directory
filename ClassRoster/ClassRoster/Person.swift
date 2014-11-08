@@ -22,9 +22,16 @@ import Foundation
 */
 
 class Person {
-    var firstName = "John"
-    var lastName = "Doe"
-    var isStudent = false
+    var firstName: String
+    var lastName: String
+    var isStudent: Bool
+    
+    init() {
+        self.firstName = "John"
+        self.lastName = "Doe"
+        self.isStudent = true
+    } // init()
+    
     
     init(first: String, last: String, enrolled: Bool) {
         self.firstName = first
