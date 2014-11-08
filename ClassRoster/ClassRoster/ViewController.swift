@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,8 +17,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // we're our own datasource
+        self.title = "Home" // title for scene
+        
+        // we're our own datasource and delegate
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         
         // create new Person instances
         var myPerson = Person(first: "Peter", last: "Parker", enrolled: true)
@@ -29,11 +32,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         self.names.append(myPerson)
         self.names.append(anotherPerson)
         self.names.append(thirdPerson)
-    }
+    } // viewDidLoad()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.names.count
-    }
+    } // tableView()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as UITableViewCell
@@ -41,7 +44,21 @@ class ViewController: UIViewController, UITableViewDataSource {
         var personToDisplay = self.names[indexPath.row]
         cell.textLabel.text = personToDisplay.getFullName()
         return cell
-    }
+    } // tableView()
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SHOW_DETAIL" {
+            let detailViewController = segue.destinationViewController as DetailViewController
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow()
+            
+            var personToPass = self.names[selectedIndexPath!.row]
+            
+            detailViewController.selectedPerson = personToPass
+            
+        } // if seque.identifier
+    } // prepareForSeque()
+    
+    
 
-}
+} // class ViewController
 

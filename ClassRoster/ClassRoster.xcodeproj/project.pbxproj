@@ -14,6 +14,7 @@
 		2FA775031A0563A2000C35A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA775021A0563A2000C35A6 /* Images.xcassets */; };
 		2FA775061A0563A2000C35A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA775041A0563A2000C35A6 /* LaunchScreen.xib */; };
 		2FA775121A0563A2000C35A6 /* ClassRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA775111A0563A2000C35A6 /* ClassRosterTests.swift */; };
+		5D3B97781A0C82A400BF39C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3B97771A0C82A400BF39C8 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2FA7750B1A0563A2000C35A6 /* ClassRosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassRosterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA775101A0563A2000C35A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FA775111A0563A2000C35A6 /* ClassRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterTests.swift; sourceTree = "<group>"; };
+		5D3B97771A0C82A400BF39C8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA774FD1A0563A2000C35A6 /* ViewController.swift */,
+				5D3B97771A0C82A400BF39C8 /* DetailViewController.swift */,
 			);
 			name = "Controller Layer";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				2F4A81CB1A09B3C7007BA72D /* Person.swift in Sources */,
 				2FA774FE1A0563A2000C35A6 /* ViewController.swift in Sources */,
 				2FA774FC1A0563A2000C35A6 /* AppDelegate.swift in Sources */,
+				5D3B97781A0C82A400BF39C8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
