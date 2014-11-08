@@ -19,8 +19,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // paint it red
-        self.view.backgroundColor = UIColor.redColor()
+        // paint it light grey
+        self.view.backgroundColor = UIColor.lightGrayColor()
         
         // display Person's full name as scene title
         self.title = self.selectedPerson.getFullName()

@@ -16,6 +16,12 @@ import Foundation
  *      lastName:   person's last name
  *      enrolled:   true if person is enrolled as a student
  *
+ *  Inits:
+ *      init(): the default initializer, takes no parameters anf returns a Person
+ *              instance initialized to default values.
+ *
+ *      init(first: , last: , enrolled ):   a parameterized init that creates a Person
+ *              instance initialized to selected values.
  *  Methods:
  *      getFullName():  returns a string containing the person's first and last names,
  *                      separated by a space.
@@ -26,19 +32,22 @@ class Person {
     var lastName: String
     var isStudent: Bool
     
+    // default init()
     init() {
         self.firstName = "John"
         self.lastName = "Doe"
         self.isStudent = true
-    } // init()
+    } // default init()
     
     
+    // parameterized init()
     init(first: String, last: String, enrolled: Bool) {
         self.firstName = first
         self.lastName = last
         self.isStudent = enrolled
-    } // init()
+    } // parameterized init()
     
+    // return the first and last names in a blank-separated string
     func getFullName() -> String {
         return self.firstName + " " + self.lastName
     } // getFullName()
