@@ -22,7 +22,7 @@ Homework 3 adds TableView to list the Person names:
 - Move the Person class to its own Swift file
 - Define an array of Person instances
 - Add a ViewTable to hold the list of Persons
-- Add methods to make the ViewTable conform to the UITableViewDataSource protocol:
+- Add methods to make the ViewTable conform to the UITableViewDataSource protocol
 - The TableView cells are populated with the full name of each Person instance in the array.
 
 Homework 4
