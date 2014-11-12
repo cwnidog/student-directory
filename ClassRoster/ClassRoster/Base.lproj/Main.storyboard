@@ -92,10 +92,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYs-hT-I5Z">
+                                <rect key="frame" x="180" y="256" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.26544201952513191" green="1" blue="0.012630316371652572" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="YKq-jr-Ct9"/>
+                                    <constraint firstAttribute="height" constant="128" id="inL-8C-OHC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qa8-iC-SB2" firstAttribute="top" secondItem="r1l-V2-WIi" secondAttribute="bottom" constant="23" id="6gG-K1-SyA"/>
+                            <constraint firstAttribute="centerX" secondItem="IYs-hT-I5Z" secondAttribute="centerX" id="V6A-jR-jXQ"/>
+                            <constraint firstItem="IYs-hT-I5Z" firstAttribute="top" secondItem="j1S-ob-xAN" secondAttribute="bottom" constant="90" id="aPC-WD-gKx"/>
                             <constraint firstItem="qa8-iC-SB2" firstAttribute="leading" secondItem="j1S-ob-xAN" secondAttribute="leading" id="bIl-U7-Ni0"/>
                             <constraint firstItem="j1S-ob-xAN" firstAttribute="top" secondItem="qa8-iC-SB2" secondAttribute="bottom" constant="19" id="u8R-Ri-LjT"/>
                             <constraint firstAttribute="centerX" secondItem="qa8-iC-SB2" secondAttribute="centerX" id="xMc-D9-pRk"/>
