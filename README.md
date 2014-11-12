@@ -35,3 +35,12 @@ Homework 4 adds a Nav Controller and a second View Controller:
 - Create a show segue from your table view cell to your detail view controller on your storyboard.
 - Using prepareForSegue(), pass the person they clicked on in the tableview to the detail view controller. To do this had to add a second, default init() to the Person class
 - Show the person's first and last name in separate labels on the detail view controller.
+
+Homework 5
+----------
+Homework 5deletes the first name & last name labels in favor of first name & last name text fields.
+
+- Replace the UILabels with UITextFields
+- When the user presses the return key, dismiss the keyboard
+- Use Autolayout to layout your detailview controller, so that it looks good in both portrait and landscape modes.
+- Add an optional UIImage property to your Person class
