@@ -74,24 +74,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WW-80-gbc">
-                                <rect key="frame" x="32" y="97" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3h-ew-1yr">
-                                <rect key="frame" x="168" y="97" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UgM-OZ-Uu4">
+                                <rect key="frame" x="252" y="86" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="KAk-ZR-NRr"/>
+                                    <constraint firstAttribute="height" constant="30" id="YHR-bW-z0a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Nr-NI-8xH">
+                                <rect key="frame" x="252" y="138" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9FR-2m-4U7"/>
+                                    <constraint firstAttribute="width" constant="97" id="mDd-6V-NQd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WU1-Fg-ZQR">
+                                <rect key="frame" x="180" y="243" width="240" height="128"/>
+                                <color key="tintColor" red="0.042425045971902553" green="1" blue="0.11302427570232754" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BtG-5k-ke6"/>
+                                    <constraint firstAttribute="width" constant="240" id="mTI-of-snJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UgM-OZ-Uu4" firstAttribute="top" secondItem="r1l-V2-WIi" secondAttribute="bottom" constant="22" id="51o-UW-xWP"/>
+                            <constraint firstItem="WU1-Fg-ZQR" firstAttribute="top" secondItem="8Nr-NI-8xH" secondAttribute="bottom" constant="75" id="FlO-Tn-BRL"/>
+                            <constraint firstAttribute="centerX" secondItem="WU1-Fg-ZQR" secondAttribute="centerX" id="PVr-ey-nkX"/>
+                            <constraint firstItem="8Nr-NI-8xH" firstAttribute="top" secondItem="UgM-OZ-Uu4" secondAttribute="bottom" constant="22" id="gxd-tZ-x8S"/>
+                            <constraint firstAttribute="centerX" secondItem="UgM-OZ-Uu4" secondAttribute="centerX" id="qad-7k-Mua"/>
+                            <constraint firstItem="UgM-OZ-Uu4" firstAttribute="leading" secondItem="8Nr-NI-8xH" secondAttribute="leading" id="vSC-ut-bf6"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstNameLabel" destination="8WW-80-gbc" id="Kc5-6V-bIU"/>
-                        <outlet property="lastNameLabel" destination="t3h-ew-1yr" id="pVh-Jk-8YA"/>
+                        <outlet property="firstNameTextField" destination="UgM-OZ-Uu4" id="nNz-F4-Tdm"/>
+                        <outlet property="lastNameTextField" destination="8Nr-NI-8xH" id="VnU-gJ-agz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jS5-vt-VWK" userLabel="First Responder" sceneMemberID="firstResponder"/>

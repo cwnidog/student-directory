@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /*
  *  Define a class, Person:
@@ -31,6 +32,7 @@ class Person {
     var firstName: String
     var lastName: String
     var isStudent: Bool
+    var image: UIImage?
     
     // default init()
     init() {

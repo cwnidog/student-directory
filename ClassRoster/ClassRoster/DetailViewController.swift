@@ -8,16 +8,20 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
-    // label Outlets
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var firstNameLabel: UILabel!
+    // Text Field Outlets for first & last names
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     
     var selectedPerson = Person() // Student's names to display
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // we're our own delegate for text fields
+        self.firstNameTextField.delegate = self
+        self.lastNameTextField.delegate = self
         
         // paint it light grey
         self.view.backgroundColor = UIColor.lightGrayColor()
@@ -25,14 +29,15 @@ class DetailViewController: UIViewController {
         // display Person's full name as scene title
         self.title = self.selectedPerson.getFullName()
         
-        // fill in the names
-        self.firstNameLabel.text = selectedPerson.firstName
-        self.lastNameLabel.text = selectedPerson.lastName
-        
 
         // Do any additional setup after loading the view.
-    } // ()viewDidLoad
-
+    } // viewDidLoad()
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 
     /*
     // MARK: - Navigation
