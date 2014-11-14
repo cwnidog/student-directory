@@ -44,3 +44,11 @@ Homework 5deletes the first name & last name labels in favor of first name & las
 - When the user presses the return key, dismiss the keyboard
 - Use Autolayout to layout your detailview controller, so that it looks good in both portrait and landscape modes.
 - Add an optional UIImage property to your Person class
+
+Homework 6
+----------
+Homework 6 adds the camera interface to the project to get a photo
+
+- Implement a UIImagePickerController into your app. Launch via a button press, just like i did in class.
+- Upon the user choosing or taking a photo, set your image view on your detail view controller to show that image
+- Also set the selectedPerson's image property to be the chosen image as well.
