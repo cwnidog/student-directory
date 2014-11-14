@@ -8,13 +8,15 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var selectedPerson = Person() // Student's names to display
+    var imagePickerController = UIImagePickerController()
 
-    // first name & last Name text field outlets
+    // first name & last Name text field and imageView outlets
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,34 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         return true
     } // textFieldShouldReturn()
 
-
+    // what to do when the camera button is pressed
+    @IBAction func cameraButtonPressed(sender: AnyObject) {
+        
+        // is camera available?
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            self.imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            self.imagePickerController.delegate = self
+            
+            self.imagePickerController.allowsEditing = true
+            
+            self.presentViewController(self.imagePickerController, animated: true, completion: nil)
+        } // camera available
+    } //cameraButtonPressed()
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        let image = info[UIImagePickerControllerEditedImage] as UIImage
+        
+        // eset te imageViewImage
+        self.imageView.image = image
+        
+        // we're done
+        imagePickerController.dismissViewControllerAnimated(true, completion: nil)
+        
+        // set the selected Person's image
+        self.selectedPerson.image = image
+    }
+    
     /*
     // MARK: - Navigation
 

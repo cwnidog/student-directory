@@ -191,6 +191,7 @@
 				TargetAttributes = {
 					2FA774F51A0563A2000C35A6 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = KGXTSQ6Z68;
 					};
 					2FA7750A1A0563A2000C35A6 = {
 						CreatedOnToolsVersion = 6.1;
