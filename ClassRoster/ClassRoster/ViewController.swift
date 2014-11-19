@@ -14,35 +14,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var names = [Person]() // an array of Persons who may be students
     
+    // get student data from a plist and construct and array of Persons, where each person
+    // corresponds ton an element in the plist array
+    func loadFromPlist () {
+        
+        let plistURL = NSBundle.mainBundle().pathForResource("Roster", ofType: "plist")
+        let plistArray = NSArray(contentsOfFile: plistURL!)
+        
+        // loop thorugh all the elements in the plistArray and get their data
+        for object in plistArray! {
+            if let personDictionary = object as? NSDictionary {
+                let firstName = personDictionary["First Name"] as String
+                let lastName = personDictionary["Last Name"] as String
+                let isStudent = personDictionary["Is Student"] as Bool
+                
+                // construct a Person inatnce with data from plist
+                var person = Person(first: firstName, last: lastName, enrolled: isStudent)
+                self.names.append(person)
+            } // if let
+        } // loop through plistArray
+    } // loadFromPlist()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loadFromPlist()
         self.title = "Home" // title for scene
         
         // we're our own datasource and delegate
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        // create new Person instances
-        var myPerson = Person(first: "Peter", last: "Parker", enrolled: true)
-        var anotherPerson = Person(first: "Lois", last: "Lane", enrolled: true)
-        var thirdPerson = Person(first: "Bruce", last: "Wayne", enrolled: false)
-        
-        // add the new instances to the array of names
-        self.names.append(myPerson)
-        self.names.append(anotherPerson)
-        self.names.append(thirdPerson)
-    } // viewDidLoad()
+            } // viewDidLoad()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.names.count
     } // tableView()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PERSON_CELL", forIndexPath: indexPath) as PersonTableViewCell
         
         var personToDisplay = self.names[indexPath.row]
-        cell.textLabel.text = personToDisplay.getFullName()
+        cell.nameLabel.text = personToDisplay.getFullName()
+        cell.subNameLabel.text = "Student" // just a dummy placeholder value
+        cell.personImageView.backgroundColor = UIColor.lightGrayColor()
         return cell
     } // tableView()
     
@@ -57,6 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         } // if seque.identifier
     } // prepareForSeque()
+    
     
     
 

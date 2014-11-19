@@ -41,15 +41,21 @@ class Person {
         self.isStudent = true
     } // default init()
     
-    
-    // parameterized init()
+    // parameterized init() - just first and last names supplied
+    init(first: String, last: String) {
+        self.firstName = first
+        self.lastName = last
+        self.isStudent = true
+    } // parameterized init()
+        
+    // parameterized init() - all values supplied
     init(first: String, last: String, enrolled: Bool) {
         self.firstName = first
         self.lastName = last
         self.isStudent = enrolled
     } // parameterized init()
     
-    // return the first and last names in a blank-separated string
+       // return the first and last names in a blank-separated string
     func getFullName() -> String {
         return self.firstName + " " + self.lastName
     } // getFullName()
