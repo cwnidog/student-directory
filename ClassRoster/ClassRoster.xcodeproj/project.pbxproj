@@ -15,6 +15,9 @@
 		2FA775061A0563A2000C35A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FA775041A0563A2000C35A6 /* LaunchScreen.xib */; };
 		2FA775121A0563A2000C35A6 /* ClassRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA775111A0563A2000C35A6 /* ClassRosterTests.swift */; };
 		5D3B97781A0C82A400BF39C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3B97771A0C82A400BF39C8 /* DetailViewController.swift */; };
+		5D47F6D11A1C2C4900890452 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D47F6D01A1C2C4900890452 /* PersonTableViewCell.swift */; };
+		5D47F6D31A1C331300890452 /* Roster.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D47F6D21A1C331300890452 /* Roster.plist */; };
+		5D47F6D51A1C48B600890452 /* Boris & Molly Snow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D47F6D41A1C48B500890452 /* Boris & Molly Snow.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		2FA775101A0563A2000C35A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FA775111A0563A2000C35A6 /* ClassRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRosterTests.swift; sourceTree = "<group>"; };
 		5D3B97771A0C82A400BF39C8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5D47F6D01A1C2C4900890452 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTableViewCell.swift; path = ../PersonTableViewCell.swift; sourceTree = "<group>"; };
+		5D47F6D21A1C331300890452 /* Roster.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Roster.plist; sourceTree = "<group>"; };
+		5D47F6D41A1C48B500890452 /* Boris & Molly Snow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Boris & Molly Snow.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA774FA1A0563A2000C35A6 /* Info.plist */,
+				5D47F6D21A1C331300890452 /* Roster.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4A81CA1A09B3C7007BA72D /* Person.swift */,
+				5D47F6D41A1C48B500890452 /* Boris & Molly Snow.jpeg */,
 				2FA774FB1A0563A2000C35A6 /* AppDelegate.swift */,
 			);
 			name = "Model Layer";
@@ -127,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA774FF1A0563A2000C35A6 /* Main.storyboard */,
+				5D47F6D01A1C2C4900890452 /* PersonTableViewCell.swift */,
 				2FA775021A0563A2000C35A6 /* Images.xcassets */,
 				2FA775041A0563A2000C35A6 /* LaunchScreen.xib */,
 			);
@@ -223,7 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D47F6D51A1C48B600890452 /* Boris & Molly Snow.jpeg in Resources */,
 				2FA775011A0563A2000C35A6 /* Main.storyboard in Resources */,
+				5D47F6D31A1C331300890452 /* Roster.plist in Resources */,
 				2FA775061A0563A2000C35A6 /* LaunchScreen.xib in Resources */,
 				2FA775031A0563A2000C35A6 /* Images.xcassets in Resources */,
 			);
@@ -246,6 +257,7 @@
 				2F4A81CB1A09B3C7007BA72D /* Person.swift in Sources */,
 				2FA774FE1A0563A2000C35A6 /* ViewController.swift in Sources */,
 				2FA774FC1A0563A2000C35A6 /* AppDelegate.swift in Sources */,
+				5D47F6D11A1C2C4900890452 /* PersonTableViewCell.swift in Sources */,
 				5D3B97781A0C82A400BF39C8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ Homework 4 adds a Nav Controller and a second View Controller:
 
 Homework 5
 ----------
-Homework 5deletes the first name & last name labels in favor of first name & last name text fields.
+Homework 5 deletes the first name & last name labels in favor of first name & last name text fields.
 
 - Replace the UILabels with UITextFields
 - When the user presses the return key, dismiss the keyboard
@@ -52,3 +52,13 @@ Homework 6 adds the camera interface to the project to get a photo
 - Implement a UIImagePickerController into your app. Launch via a button press, just like i did in class.
 - Upon the user choosing or taking a photo, set your image view on your detail view controller to show that image
 - Also set the selectedPerson's image property to be the chosen image as well.
+
+Homework 7
+-----------
+
+Homework 7 has a list of people stored in a property list file, Roster.plist. The View Controller's swift code is updated to read the list of people in the property list, rather than have the list of people hard coded. Additionally the View Controller's generic UITableViewCell is replaced with a custom version.
+
+- Create a custom table view cell with an image view and label
+- Convert your app to use your custom cell instead of a regular uitableviewcell
+- Create a plist with a root array, and fill it with dictionaries, each with a last name and first name key value pairing
+- In code, load and parse through the plist and create a person object for each dictionary. Add each person to your people array so your table view can show these people.
