@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var selectedPerson = Person() // Student's names to display
+    var selectedPerson: Person? // Student's names to display
     var imagePickerController = UIImagePickerController()
 
     // first name & last Name text field and imageView outlets
@@ -29,12 +29,26 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.view.backgroundColor = UIColor.lightGrayColor()
         
         // display Person's full name as scene title
-        self.title = self.selectedPerson.getFullName()
+        self.title = self.selectedPerson?.getFullName()
+        
+        self.firstNameTextField.text = selectedPerson?.firstName
+        self.lastNameTextField.text = selectedPerson?.lastName
+        
+        if selectedPerson?.image != nil {
+            self.imageView.image = selectedPerson?.image
+        }
   
         // Do any additional setup after loading the view.
     } // viewDidLoad()
     
-    // resign s first responder when return key entered
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.selectedPerson?.firstName = self.firstNameTextField.text
+        self.selectedPerson?.lastName = self.lastNameTextField.text
+    }
+    
+    // resign as first responder when return key entered
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -58,14 +72,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let image = info[UIImagePickerControllerEditedImage] as UIImage
         
-        // eset te imageViewImage
+        // reset the imageViewImage
         self.imageView.image = image
         
         // we're done
         imagePickerController.dismissViewControllerAnimated(true, completion: nil)
         
         // set the selected Person's image
-        self.selectedPerson.image = image
+        self.selectedPerson?.image = image
     }
     
     /*

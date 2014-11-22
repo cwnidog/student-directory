@@ -28,26 +28,35 @@ import UIKit
  *                      separated by a space.
 */
 
-class Person {
+class Person: NSObject, NSCoding {
     var firstName: String
     var lastName: String
     var isStudent: Bool
     var image:  UIImage?
     
-    // default init()
-    init() {
-        self.firstName = "John"
-        self.lastName = "Doe"
-        self.isStudent = true
-    } // default init()
+   required init(coder aDecoder: NSCoder) {
+        self.firstName = aDecoder.decodeObjectForKey("firstName") as String
+        self.lastName = aDecoder.decodeObjectForKey("lastName") as String
+        self.isStudent = aDecoder.decodeObjectForKey("isStudent") as Bool
     
-    // parameterized init() - just first and last names supplied
-    init(first: String, last: String) {
-        self.firstName = first
-        self.lastName = last
-        self.isStudent = true
-    } // parameterized init()
+        if let decodedImage = aDecoder.decodeObjectForKey("image") as? UIImage {
+            self.image = decodedImage
+        }
+    } // init()
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.firstName, forKey: "firstName")
+        aCoder.encodeObject(self.lastName, forKey: "lastName")
+        aCoder.encodeObject(self.isStudent, forKey: "isStudent")
         
+        if self.image != nil {
+            aCoder.encodeObject(self.image!, forKey: "image")
+        }
+        else {
+            aCoder.encodeObject(nil, forKey: "image")
+        }
+    } //encodeWithCoder()
+    
     // parameterized init() - all values supplied
     init(first: String, last: String, enrolled: Bool) {
         self.firstName = first

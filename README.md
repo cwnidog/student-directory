@@ -62,3 +62,11 @@ Homework 7 has a list of people stored in a property list file, Roster.plist. Th
 - Convert your app to use your custom cell instead of a regular uitableviewcell
 - Create a plist with a root array, and fill it with dictionaries, each with a last name and first name key value pairing
 - In code, load and parse through the plist and create a person object for each dictionary. Add each person to your people array so your table view can show these people.
+
+Homework 8
+----------
+
+Homework 8 adds data persistence. If there is no archived data, the app will pull initial data from the property list, but it will then copy that data to an archive on the device's file system (in .DocumentDirector/archive). It will then store any data updates in the archive, as well. This data is then displayed in th eDetail View Controller scene whenever the user selects a person in the View Controller's table cells. I also expanded on the assignment to have it display the updated data in the View Controller's data cell for a person, sort of as a preview.
+
+- Implement persistence into your app. Skip NSUserDefaults for now, use the NSCoding protocol and NSKeyedArchiver/Unarchiver to persist your people array to disk.
+- Make sure you have all the functionality from the previous assignments as well, this should be a pretty fully functioning app at this point.
